@@ -32,16 +32,16 @@
 }
 
 // Respond to Universal Links
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
-  if (![[Branch getInstance] continueUserActivity:userActivity]) {
-    // send unhandled URL to notification
-    if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
-      [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"BSDKPostUnhandledURL" object:[userActivity.webpageURL absoluteString]]];
-    }
-  }
+// - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+//   if (![[Branch getInstance] continueUserActivity:userActivity]) {
+//     // send unhandled URL to notification
+//     if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+//       [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"BSDKPostUnhandledURL" object:[userActivity.webpageURL absoluteString]]];
+//     }
+//   }
 
-  return YES;
-}
+//   return YES;
+// }
 
 // Respond to Push Notifications
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
